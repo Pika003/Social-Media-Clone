@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Poppins:wght@300;400;500;600&family=Roboto:wght@500&display=swap");
 
 :root {
-  --color-dark: hsl(252, 30%, 17%);
-  --color-light: hsl(252, 30%, 95%);
-  --color-gray: hsl(252, 15%, 65%);
-  --color-primary: hsl(252, 75%, 60%);
+  --color-primary-hue: 255;
+  --light-color-lightness: 95%;
+  --dark-color-lightness: 17%;
+  --white-color-lightness: 100%;
+
+  --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+  --color-light: hsl(252, 30%, var(--light-color-lightness));
+  --color-white: hsl(252, 30%, var(--white-color-lightness));
+  --color-primary: hsl(var(--color-primary-hue), 75%, 60%);
+  --color-gray: hsl(var(--color-primary-hue), 15%, 65%);
   --color-secondary: hsl(252, 100%, 90%);
   --color-success: hsl(120, 95%, 65%);
   --color-danger: hsl(0, 95%, 65%);
-  --color-white: hsl(252, 30%, 100%);
   --color-black: hsl(252, 30%, 10%);
 
   --border-radious: 2rem;
@@ -223,7 +228,7 @@ main .container .left .profile {
   overflow: hidden;
 }
 .left .sidebar .menu-item:last-child.active {
-  border-top-left-radius: var(--card-border-radius);
+  border-bottom-left-radius: var(--card-border-radius);
   overflow: hidden;
 }
 
@@ -552,6 +557,7 @@ main .container .right {
   padding: 3rem;
   border-radius: var(--card-border-radius);
   width: 50%;
+  box-shadow: 0 0 1rem var(--color-primary);
 }
 
 /* ---- Font Size ---- */
@@ -715,6 +721,10 @@ main .container .right {
   .left .btn{
     display: none;
   }
+
+  .customize-theme .card{
+    width: 80vw;
+  }
 }
 
 /* ===== Media Queries for-> 992px ===== */
@@ -757,5 +767,9 @@ main .container .right {
 
   main .container .right{
     display: none;
+  }
+
+  .customize-theme .card{
+    width: 92vw;
   }
 }
